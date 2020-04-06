@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+
+html{
+    background-color: rgba(1, 1, 1, 0);
+}
+
+#header{
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(244, 234, 150, 1);
+    background-image: linear-gradient(to bottom right, rgba(244, 234, 150, 1), white);
+    border-radius: 5px;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; 
+}
+
+#logo{
+    font-size: 24px;
+}
+
+
+
+body{
+    background-image: url("images/HeartHands.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 100%;
+    background-attachment: scroll;
+}
+
+
+input{
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; 
+    border-radius: 5px;
+}
+
+.tile{
+    background-color: green;
+}
