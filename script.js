@@ -37,30 +37,21 @@ $("#form").on("submit", function() {
 
 
 function addDays(list){
-    //console.log(list);
+    console.log(list);
 
-    let html = `
-        <div class = "tile is-ancestor">
-            <div class = "tile is-horizontal is-12">
-                <div class = "tile is-parent">`;
-
-    for(let i = 0; i < list.length; i += 8){
-            console.log(list[i]["weather"][0]["icon"]);
-            html += `
-                    <div class = "tile day is-child">
-                        <p>${list[i]["dt_txt"].split(" ")[0]}</p>
-                        <img src = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${list[i]["weather"][0]["icon"]}.png">
-                    </div>`;
-
+    let html = ``;
+    for(let i = 8; i < list.length; i += 8){
+        console.log(list[i]["dt_txt"]);
+        html += `
+            <article class = "tile day is-child">
+                <p>${list[i]["dt_txt"].split(" ")[0]}</p>
+                <img src = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${list[i]["weather"][0]["icon"]}.png">
+            </article>
+        `;
     }
+    $("#days").html(html);
 
-    html += `
 
-                </div>
-            </div>
-        </div>`;
-
-        $("#dashboard").prepend(html);
 
 }
 
