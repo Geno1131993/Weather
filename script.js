@@ -24,8 +24,9 @@ function sendQuery(query_url){
         method: "GET"
     }).then(function(response) {
         //console.log(response);
-        console.log(response);
-        //console.log(response["weather"][0]["main"]);
+        //console.log(response);
+        //console.log(response["list"]);
+        addDays(response["list"]);
     });
 };
 
@@ -37,8 +38,12 @@ $("#form").on("submit", function() {
 
 
 
-function addDays(){
-    
+function addDays(list){
+    //console.log(list);
+    for(let i = 0; i < list.length; i += 8){
+
+        console.log(list[i]);
+    }
 
 
 }
