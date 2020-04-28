@@ -24,7 +24,7 @@ function sendQuery(query_url){
         method: "GET"
     }).then(function(response) {
 
-        addDays(response["list"]);
+        addDays(response["list"], $("#city").val(), $("#state").val());
     });
 };
 
@@ -36,15 +36,15 @@ $("#form").on("submit", function() {
 
 
 
-function addDays(list){
+function addDays(list, city, state){
     console.log(list);
 
-    let html = ``;
+
     $("#forecast").html(`
         <nav class = "level">
             <div class = "level-left">
                 <div class = "level-item">
-                
+
                 </div>
             </div>
             <div class = "level-right">
@@ -54,6 +54,7 @@ function addDays(list){
             </div>
         </nav>`);
 
+    let html = ``;
     for(let i = 8; i < list.length; i += 8){
         console.log(list[i]);
         html += `
@@ -66,7 +67,14 @@ function addDays(list){
     
     $("#days").html(html);
 
-
+    let newSearchItem = `
+        <div id = "${city}${state}" class = "search">
+            <p>${city}, ${state}</p>
+        </div>
+    `;
+    $("#history").append(newSearchItem);
 
 }
+
+
 
