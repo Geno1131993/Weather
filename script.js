@@ -40,8 +40,22 @@ function addDays(list){
     console.log(list);
 
     let html = ``;
+    $("#forecast").html(`
+        <nav class = "level">
+            <div class = "level-left">
+                <div class = "level-item">
+                
+                </div>
+            </div>
+            <div class = "level-right">
+                <div class = "level-item">
+                    <img id = "currentIcon" src = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${list[0]["weather"][0]["icon"]}.png" height = 300px width = 300px>
+                </div>
+            </div>
+        </nav>`);
+
     for(let i = 8; i < list.length; i += 8){
-        console.log(list[i]["dt_txt"]);
+        console.log(list[i]);
         html += `
             <article class = "tile day is-child">
                 <p>${list[i]["dt_txt"].split(" ")[0]}</p>
@@ -49,6 +63,7 @@ function addDays(list){
             </article>
         `;
     }
+    
     $("#days").html(html);
 
 
