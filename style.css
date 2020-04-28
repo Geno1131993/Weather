@@ -36,6 +36,7 @@ input{
     border-radius: 5px;
 }
 
-.tile{
-    background-color: green;
+.day{
+    background-color: rgba(194, 180, 234, .8);
+    margin: 5px;
 }
