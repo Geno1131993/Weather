@@ -23,9 +23,7 @@ function sendQuery(query_url){
         url: query_url,
         method: "GET"
     }).then(function(response) {
-        //console.log(response);
-        //console.log(response);
-        //console.log(response["list"]);
+
         addDays(response["list"]);
     });
 };
@@ -40,11 +38,29 @@ $("#form").on("submit", function() {
 
 function addDays(list){
     //console.log(list);
-    for(let i = 0; i < list.length; i += 8){
 
-        console.log(list[i]);
+    let html = `
+        <div class = "tile is-ancestor">
+            <div class = "tile is-horizontal is-12">
+                <div class = "tile is-parent">`;
+
+    for(let i = 0; i < list.length; i += 8){
+            console.log(list[i]["weather"][0]["icon"]);
+            html += `
+                    <div class = "tile day is-child">
+                        <p>${list[i]["dt_txt"].split(" ")[0]}</p>
+                        <img src = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${list[i]["weather"][0]["icon"]}.png">
+                    </div>`;
+
     }
 
+    html += `
+
+                </div>
+            </div>
+        </div>`;
+
+        $("#dashboard").prepend(html);
 
 }
 
