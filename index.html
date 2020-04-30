@@ -34,7 +34,7 @@
                         <form id = "form">
                             <input type = "text" id = "city" name = "city">
                             <input type = "text" id = "state" name = "state">
-                            <input type = "submit" value = "Search">
+                            <input type = "submit" id = "submit" value = "Search">
                         </form>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
             <div class = "tile is-horizontal is-12">
                 <div class = "tile is-parent is-4">
                     <article id = "history" class = "tile is-child">
-                        <p>Search History:</p>
+                        <p id = "logoSearch" >Search History:</p>
                     </article>
                 </div>
                <div id = "dashboard" class = "tile is-ancestor">
@@ -57,7 +57,7 @@
                                 <div id = "forecast">
                                     <br><br>Welcome to your weather dashboard!<br><br>
 
-                                    Enter the city you would like to search for -- it will appear in your search history.<br>
+                                    Enter the city you would like to search for -- it will appear in your search history.<br><br>
                                     Click the name of a city that you have searched for before to view the forecast for that city.
                                 </div>
                             </article>

@@ -69,16 +69,30 @@ input{
 #current{
     background-color: rgba(242, 255, 169, .8);
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+    font-size: 20px;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
 }
 
-#days{
-    margin: 5px;
-    padding: 5px;
+
+.day{
+    margin: 30px;
+    padding: 25px;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+    font-size: 20px;
 }
 
+
+
+#logoSearch{
+    font-size: 28px;
+
+}
+
+.search{
+    font-size: 20px;
+}
 
 .search:hover{
     color: rgba(173, 90, 255, 1);
@@ -87,4 +101,21 @@ input{
 
 .search:focus{
     color: rgba(40, 120, 181, 1);
+}
+
+
+
+
+#submit{
+    background-color: rgba(242, 255, 169, 1);
+}
+
+
+#submit:hover{
+    background-color: rgba(136, 152, 206, 1);
+}
+
+
+#submit:focus{
+    background-color: rgba(23, 123, 159, 1);
 }

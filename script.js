@@ -46,10 +46,10 @@ function addDays(list, city, state){
             <div class = "level-left">
                 <div class = "level-item">
                     <div id = "metrics">
-                        <div id = "location"> ${city}, ${state} <br></div>
-                        <div id = "temp"> Current temperature: ${toFarenheit(current["temp"])}F</div>
-                        <div id = "feels"> Feels like: ${toFarenheit(current["feels_like"])}F</div>
-                        <div id = "hum"> Humidity: ${current["humidity"]}%</div>
+                        <div id = "currentLocation"> ${city}, ${state} <br></div>
+                        <div id = "currentTemp"> Current temperature: ${toFarenheit(current["temp"])}F</div>
+                        <div id = "currentFeels"> Feels like: ${toFarenheit(current["feels_like"])}F</div>
+                        <div id = "currentHum"> Humidity: ${current["humidity"]}%</div>
                     </div>
                 </div>
             </div>
@@ -63,10 +63,14 @@ function addDays(list, city, state){
 
     let html = ``;
     for(let i = 8; i < list.length; i += 8){
+        let forecast = list[i]["main"];
         html += `
             <article class = "tile day is-child">
                 <p>${list[i]["dt_txt"].split(" ")[0]}</p>
                 <img src = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${list[i]["weather"][0]["icon"]}.png">
+                <div class = "temp metric"> Temperature: ${toFarenheit(forecast["temp"])}F</div>
+                <div class = "feels metric"> Will feel like: ${toFarenheit(forecast["feels_like"])}F</div>
+                <div class = "hum metric"> Humidity: ${forecast["humidity"]}%</div>
             </article>
         `;
     }
