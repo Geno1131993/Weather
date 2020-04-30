@@ -20,7 +20,9 @@ html{
     font-size: 24px;
 }
 
-
+#today{
+    font-size: 26px;
+}
 
 body{
     background-image: url("images/HeartHands.jpg");
@@ -38,8 +40,9 @@ input{
 
 .day{
     background-color: rgba(194, 180, 234, 1);
-    margin: 10px;
     padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 #history{
@@ -60,6 +63,7 @@ input{
     margin: 10px;
     /* background-color: rgba; */
     padding: 5px;
+    
 }
 
 #current{
@@ -67,4 +71,20 @@ input{
     font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
     margin: 10px;
     padding: 10px;
+    border-radius: 5px;
+}
+
+#days{
+    margin: 5px;
+    padding: 5px;
+}
+
+
+.search:hover{
+    color: rgba(173, 90, 255, 1);
+}
+
+
+.search:focus{
+    color: rgba(40, 120, 181, 1);
 }
